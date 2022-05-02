@@ -8,6 +8,7 @@ WORKDIR /build
 RUN git clone https://github.com/coredns/coredns
 
 WORKDIR /build/coredns
+RUN git checkout tags/v1.9.1 -b v1.9.1
 RUN echo "unbound:github.com/coredns/unbound" >> /build/coredns/plugin.cfg
 
 RUN go get github.com/coredns/unbound
